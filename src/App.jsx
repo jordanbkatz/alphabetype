@@ -111,7 +111,7 @@ function App() {
           <FaRedoAlt className="icon" />
         </button>
         <h1>AlphabeType</h1>
-        <a href="https://github.com/jordanbkatz">
+        <a href="https://github.com/jordanbkatz/alphabetype">
           <FaGithub className="icon" />
         </a>
         <div className="best">
