@@ -20,7 +20,7 @@ const defaultState = {
 
 function App() {
   const [state, setState] = useState(defaultState);
-  const reset = () => setState(defaultState);
+  const reset = () => setState(prevState => ({...defaultState, best: prevState.best}));
   const letterClass = useMemo(() => letter => {
     let className = ['letter'];
     if (letter === state.curr && !state.finished) {
@@ -83,11 +83,7 @@ function App() {
           newState.finished = false;
         }
         else if (e.key === "Return" || e.key === "Enter") {
-          newState.curr = 'a';
-          newState.wrong = false;
-          newState.running = false;
-          newState.finished = false;
-          newState.stopwatch = 0;
+          reset();
         }
         else if (!prevState.finished) {
           newState.wrong = true;
