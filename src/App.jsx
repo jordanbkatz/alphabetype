@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { FaRedoAlt, FaGithub } from 'react-icons/fa';
 
-const item = localStorage.getItem('alphabetype-best');
+const item = localStorage.getItem('best');
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const letterIndex = letter => alphabet.indexOf(letter);
 const formatTime = (time) => {
@@ -71,7 +71,7 @@ function App() {
             newState.running = false;
             if (!prevState.best || prevState.stopwatch < prevState.best) {
               newState.best = prevState.stopwatch;
-              localStorage.setItem('alphabetype-best', JSON.stringify(newState.best));
+              localStorage.setItem('best', JSON.stringify(newState.best));
             }
           }
           else {
