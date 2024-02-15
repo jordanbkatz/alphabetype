@@ -83,7 +83,11 @@ function App() {
           newState.finished = false;
         }
         else if (e.key === "Return" || e.key === "Enter") {
-          reset();
+          newState.curr = 'a';
+          newState.wrong = false;
+          newState.running = false;
+          newState.finished = false;
+          newState.stopwatch = 0;
         }
         else if (!prevState.finished) {
           newState.wrong = true;
